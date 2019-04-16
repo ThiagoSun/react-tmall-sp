@@ -34,7 +34,7 @@ if (process.env.NODE_ENV === 'development') {
 
     // Setup hot module replacement
     module.hot.accept([
-        './routes/index',
+        './container/App',
       ], () =>
         setImmediate(() => {
           ReactDOM.unmountComponentAtNode(MOUNT_NODE)
