@@ -9,13 +9,14 @@ export const createRoutes = (store) => ([
   {
     path: '/',
     exact: true,
-    component: Home
+    render: Home
   },
   {
     path: '/counter',
     exact: true,
-    component: Counter(store)
-  }
+    component: Counter
+  },
+
 ]);
 
 /*  Note: childRoutes can be chunked or otherwise loaded programmatically
