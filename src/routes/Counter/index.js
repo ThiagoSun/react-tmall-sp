@@ -1,14 +1,13 @@
-import { injectReducer } from '../../store/reducers'
+import { injectReducer } from '../../store/reducers';
+import CounterContainer from './containers/CounterContainer';
+import counterReducer from './modules/counter';
 
-export default (store) => ({
-  path : 'counter',
-  async getComponent (nextState, cb) {
-    // 使用ES6 import()方法替代require.ensure()
-    const [Counter, reducer] = await Promise.all([
-      import('./containers/CounterContainer.js'),
-      import('./modules/counter.js')
-    ]);
-    injectReducer(store, { key: 'counter', reducer });
-    return cb(null, Counter);
-  }
-})
+export default (store) => {
+  injectReducer(store, { key: 'counter', reducer: counterReducer });
+  return CounterContainer;
+};
+
+// const CounterContainer = await import(/* webpackChunkName: 'counter' */'./containers/CounterContainer');
+// const counterReducer = await import(/* webpackChunkName: 'counter' */'./modules/counter');
+// injectReducer(store, { key: 'counter', counterReducer });
+// return CounterContainer;

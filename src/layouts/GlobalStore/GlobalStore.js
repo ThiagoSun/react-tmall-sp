@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+const Fragment = React.Fragment;
+
 export default class GlobalStore extends React.Component {
   static propTypes = {
     globalStore: PropTypes.object,
-    children: PropTypes.element.isRequired,
+    children: PropTypes.node.isRequired,
     getGlobalInitInfo: PropTypes.func
   };
 
@@ -29,6 +31,8 @@ export default class GlobalStore extends React.Component {
     if (this.state.hasError) {
       return '页面崩溃了...刷新试试吧！'
     }
-    return this.props.children;
+    return <Fragment>
+      {this.props.children}
+    </Fragment>
   }
 }

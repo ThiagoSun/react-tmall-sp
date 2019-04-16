@@ -2,18 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.less';
 import createStore from './store/createStore';
+import {history} from "./store/reducers";
 import * as serviceWorker from './serviceWorker';
+import App from './container/App';
+import createRoutes from './routes/index';
 
 const store = createStore(window.__INITIAL_STATE__);
-
+const routes = createRoutes(store);
 const MOUNT_NODE = document.getElementById('root');
 
 let render = () => {
-  const App = require('./container/App').default;
-  const routes = require('./routes/index').default(store);
-
   ReactDOM.render(
-    <App store={store} routes={routes} />,
+    <App store={store} routes={routes} history={history} />,
     MOUNT_NODE
   )
 };
