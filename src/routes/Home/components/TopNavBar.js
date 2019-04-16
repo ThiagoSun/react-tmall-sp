@@ -19,7 +19,8 @@ class TopNavBar extends React.Component {
   static propTypes = {
     topNavBar: PropTypes.object,
     getCategoryData: PropTypes.func,
-    onToggleCallback: PropTypes.func
+    onToggleCallback: PropTypes.func,
+    children: PropTypes.node
   };
 
   static defaultProps = {};
@@ -80,7 +81,8 @@ class TopNavBar extends React.Component {
             sidebar={this.renderSideBar()}
             open={this.state.drawerOpen}
             onOpenChange={this.onOpenChange}
-          >{''}
+          >
+            {this.props.children}
           </Drawer>
         </div>
       </Fragment>

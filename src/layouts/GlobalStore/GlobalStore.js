@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Toast} from 'antd-mobile';
 
 const Fragment = React.Fragment;
 
@@ -24,13 +25,14 @@ export default class GlobalStore extends React.Component {
   componentDidCatch(error, info) {
     this.setState({
       hasError: true
-    })
+    });
+    Toast.info('出错了！（来自"错误边界"的提示）')
   }
 
   render() {
-    if (this.state.hasError) {
-      return '页面崩溃了...刷新试试吧！'
-    }
+    // if (this.state.hasError) {
+    //   return '页面崩溃了...刷新试试吧！'
+    // }
     return <Fragment>
       {this.props.children}
     </Fragment>
