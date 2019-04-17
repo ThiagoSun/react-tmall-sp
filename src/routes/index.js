@@ -9,7 +9,7 @@ export const createRoutes = (store) => ([
   {
     path: '/',
     exact: true,
-    render: Home
+    component: Home
   },
   {
     path: '/counter',

@@ -1,1 +1,0 @@
-{"version":3,"sources":["/Users/sunmengge/Documents/SourceCode/react-tmall-sp/src/routes/Counter/components/Counter.less","counter.7f114e24.chunk.css"],"names":[],"mappings":"AAAA,kCAEI,aCAJ","file":"counter.7f114e24.chunk.css","sourcesContent":[":local{\n  .counterContainer{\n    margin: 0 auto;\n  }\n}\n",".Counter__counterContainer--1Rg-2 {\n  margin: 0 auto;\n}\n\n"]}

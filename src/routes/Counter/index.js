@@ -12,8 +12,3 @@ const AsyncComponent = ({ store }) => {
 };
 
 export default AsyncComponent;
-
-// const CounterContainer = await import(/* webpackChunkName: 'counter' */'./containers/CounterContainer');
-// const counterReducer = await import(/* webpackChunkName: 'counter' */'./modules/counter');
-// injectReducer(store, { key: 'counter', counterReducer });
-// return CounterContainer;
