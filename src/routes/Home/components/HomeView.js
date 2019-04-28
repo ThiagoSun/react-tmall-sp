@@ -23,7 +23,7 @@ export default class HomeView extends React.PureComponent{
   render() {
     return [
       <TopNavBar key={'TopNavBar'} onToggleCallback={this.handleTopNavBarToggle}>
-        <Link to={'/counter'} key={'counter'} style={{fontSize: '22px'}}>counter</Link>
+        <Link to={'/counter'} key={'counter'}>counter</Link>
         <div style={{height: '10000px'}} key='test'>index1</div>
         <img src={logoImg} alt='' key='img' />
       </TopNavBar>

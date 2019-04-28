@@ -1,6 +1,6 @@
 import React from 'react';
 import {shouldComponentUpdate} from 'lib/decorators';
-import {Drawer, NavBar, Icon} from 'antd-mobile';
+import {Drawer, NavBar, Icon, Toast} from 'antd-mobile';
 import PropTypes from 'prop-types';
 import Styles from './TopNavBar.less';
 
@@ -27,11 +27,12 @@ class TopNavBar extends React.Component {
 
   componentDidMount() {
     this.props.getCategoryData();
+    Toast.info('加载中...', 4);
   }
 
   onOpenChange = () => {
     this.setState({drawerOpen: !this.state.drawerOpen});
-    if (Object.prototype.toString.call(this.props.onToggleCallback === "[object Function]")){
+    if (Object.prototype.toString.call(this.props.onToggleCallback) === "[object Function]"){
       this.props.onToggleCallback();
     }
   }
@@ -76,7 +77,7 @@ class TopNavBar extends React.Component {
         <div className={Styles['drawer-container']}>
           <Drawer
             className={Styles["my-drawer"]}
-            style={{minHeight: document.documentElement.clientHeight}}
+            style={{height: document.documentElement.clientHeight - 88}}
             // enableDragHandle
             sidebar={this.renderSideBar()}
             open={this.state.drawerOpen}
