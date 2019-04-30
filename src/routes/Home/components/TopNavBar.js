@@ -1,6 +1,6 @@
 import React from 'react';
 import {shouldComponentUpdate} from 'lib/decorators';
-import {Drawer, NavBar, Icon, Toast} from 'antd-mobile';
+import {Drawer, NavBar, Icon} from 'antd-mobile';
 import PropTypes from 'prop-types';
 import Styles from './TopNavBar.less';
 
@@ -27,7 +27,6 @@ class TopNavBar extends React.Component {
 
   componentDidMount() {
     this.props.getCategoryData();
-    Toast.info('加载中...', 4);
   }
 
   onOpenChange = () => {
