@@ -263,6 +263,8 @@ module.exports = function(webpackEnv) {
       // Keep the runtime chunk separated to enable long term caching
       // https://twitter.com/wSokra/status/969679223278505985
       runtimeChunk: true,
+      moduleIds: 'hashed',    // 保证长效缓存
+      chunkIds: 'named',      // 保证长效缓存
     },
     resolve: {
       // This allows you to set a fallback for where Webpack should look for modules.
