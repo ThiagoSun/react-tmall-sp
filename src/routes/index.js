@@ -1,6 +1,6 @@
 // We only need to import the modules necessary for initial render
 import Home from './Home'
-// import Counter from './Counter'
+import Counter from './Counter'
 
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
@@ -11,11 +11,11 @@ export const createRoutes = (store) => ([
     exact: true,
     component: Home
   },
-  // {
-  //   path: '/counter',
-  //   exact: true,
-  //   component: Counter
-  // },
+  {
+    path: '/counter',
+    exact: true,
+    component: Counter
+  },
 
 ]);
 
