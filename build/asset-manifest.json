@@ -1,0 +1,15 @@
+{
+  "counter.css": "/static/css/counter.0f03ee80.chunk.css",
+  "counter.js": "/static/js/counter.d5a8d3b8.chunk.js",
+  "counter2.css": "/static/css/counter2.fcbbbd57.chunk.css",
+  "counter2.js": "/static/js/counter2.5847f288.chunk.js",
+  "main.css": "/static/css/main.cd43a86a.chunk.css",
+  "main.js": "/static/js/main.d43258ad.chunk.js",
+  "runtime~main.js": "/static/js/runtime~main.25833b98.js",
+  "vendors~main.css": "/static/css/vendors~main.ef76228c.chunk.css",
+  "vendors~main.js": "/static/js/vendors~main.b8cd2343.chunk.js",
+  "index.html": "/index.html",
+  "precache-manifest.e8edc70be36fa22eb2f486bf6d0e3140.js": "/precache-manifest.e8edc70be36fa22eb2f486bf6d0e3140.js",
+  "service-worker.js": "/service-worker.js",
+  "static/media/logo.svg": "/static/media/logo.5d5d9eef.svg"
+}

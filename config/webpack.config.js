@@ -243,8 +243,22 @@ module.exports = function(webpackEnv) {
       // https://twitter.com/wSokra/status/969633336732905474
       // https://medium.com/webpack/webpack-4-code-splitting-chunk-graph-and-the-splitchunks-optimization-be739a861366
       splitChunks: {
-        chunks: 'all',
-        name: false,
+        // chunks: 'all',    // 简单粗暴的做法，一句话搞定
+        cacheGroups: {
+          vendors: {
+            // test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/     指定具体的包
+            test: /[\\/]node_modules[\\/]/,
+            // name: 'vendors',
+            chunks: 'initial',    // all:从main和所有异步包中抽取；async:从异步包抽取
+            // priority: 3,        // 优先级
+          },
+          commons: {
+            // name: 'commons',
+            chunks: 'async',
+            minChunks: 2,
+            // priority: 2,
+          }
+        }
       },
       // Keep the runtime chunk separated to enable long term caching
       // https://twitter.com/wSokra/status/969679223278505985
@@ -514,7 +528,7 @@ module.exports = function(webpackEnv) {
     },
     plugins: [
       // 打包分析工具
-      // new BundleAnalyzerPlugin(),
+      new BundleAnalyzerPlugin(),
       // Generates an `index.html` file with the <script> injected.
       new HtmlWebpackPlugin(
         Object.assign({}, {
