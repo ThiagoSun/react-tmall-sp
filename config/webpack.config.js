@@ -159,7 +159,7 @@ module.exports = function(webpackEnv) {
       // In development, it does not produce real files.
       filename: isEnvProduction
         ? 'static/js/[name].[contenthash:8].js'
-        : isEnvDevelopment && 'static/js/main.js',
+        : isEnvDevelopment && 'static/js/[name].js',
       // There are also additional JS chunk files if you use code splitting.
       chunkFilename: isEnvProduction
         ? 'static/js/[name].[contenthash:8].chunk.js'
@@ -216,7 +216,7 @@ module.exports = function(webpackEnv) {
             },
           },
           // Use multi-process parallel running to improve the build speed
-          // Default number of concurrent runs: os.cpus().length - 1
+          // 多线程加速构建，官方推荐打开
           parallel: true,
           // Enable file caching
           cache: true,
@@ -369,7 +369,7 @@ module.exports = function(webpackEnv) {
                       },
                     },
                   ],
-                  ['import', {libraryName: 'antd-mobile', style: true}],
+                  ['import', {libraryName: 'antd-mobile', style: 'css'}],
                 ],
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
                 // It enables caching results in ./node_modules/.cache/babel-loader/
