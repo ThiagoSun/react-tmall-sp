@@ -1,13 +1,12 @@
 {
   "counter.css": "/static/css/counter.0f03ee80.chunk.css",
   "counter.js": "/static/js/counter.d1fa1b68.chunk.js",
-  "main.css": "/static/css/main.cd43a86a.chunk.css",
-  "main.js": "/static/js/main.71f4183d.chunk.js",
+  "main.css": "/static/css/main.99895806.chunk.css",
+  "main.js": "/static/js/main.b89b1d67.chunk.js",
   "runtime~main.js": "/static/js/runtime~main.0dd2f321.js",
-  "vendors~main.css": "/static/css/vendors~main.01b7e3c1.chunk.css",
-  "vendors~main.js": "/static/js/vendors~main.4297a590.chunk.js",
+  "vendors.js": "/static/js/vendors.a289231d.chunk.js",
   "index.html": "/index.html",
-  "precache-manifest.78b71f9370cb7deaadce8bc7f219249e.js": "/precache-manifest.78b71f9370cb7deaadce8bc7f219249e.js",
+  "precache-manifest.3abf0c9627062a8b99a2a902674e25d6.js": "/precache-manifest.3abf0c9627062a8b99a2a902674e25d6.js",
   "service-worker.js": "/service-worker.js",
   "static/media/logo.svg": "/static/media/logo.5d5d9eef.svg"
 }

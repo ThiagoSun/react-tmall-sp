@@ -117,7 +117,6 @@ module.exports = function(webpackEnv) {
         options: {
           sourceMap: isEnvProduction && shouldUseSourceMap,
           modifyVars: theme,
-          javascriptEnabled: true
         },
       });
     }
@@ -245,18 +244,23 @@ module.exports = function(webpackEnv) {
       splitChunks: {
         // chunks: 'all',    // 简单粗暴的做法，一句话搞定
         cacheGroups: {
+          default: false,
           vendors: {
             // test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/     指定具体的包
-            test: /[\\/]node_modules[\\/]/,
-            // name: 'vendors',
-            chunks: 'initial',    // all:从main和所有异步包中抽取；async:从异步包抽取
-            // priority: 3,        // 优先级
+            // test: /[\\/]node_modules[\\/]/,
+            test: (module, chunks) => {
+              const reg = /[\\/]node_modules[\\/]/;
+              return reg.test(module.resource) && module.resource.indexOf('mathjs') === -1;
+            },
+            name: 'vendors',
+            chunks: 'initial',    // all:从所有包中抽取；async:从异步包抽取,initial:从初始包抽取
+            priority: 10,        // 优先级
           },
           commons: {
-            // name: 'commons',
+            name: 'commons',
             chunks: 'async',
-            minChunks: 2,
-            // priority: 2,
+            priority: 9,
+            minChunks: 4,
           }
         }
       },

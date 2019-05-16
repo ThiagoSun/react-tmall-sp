@@ -6,6 +6,7 @@ import {history} from "./store/reducers";
 import * as serviceWorker from './serviceWorker';
 import App from './container/App';
 import createRoutes from './routes/index';
+import 'react-app-polyfill/ie9';
 
 const store = createStore(window.__INITIAL_STATE__);
 const routes = createRoutes(store);
