@@ -58,7 +58,7 @@ export const fetchQueryProgress = (requestBody) => {
   }
 }
 
-const fetchQueryProgressAPI = async ({contributor_name, min_date, max_date, two_year_transaction_period, contributor_employer}) => {
+const fetchQueryProgressAPI = async ({contributor_name, min_date, max_date, two_year_transaction_period, contributor_employer, originCompanyName}) => {
   const body = {
     api_key: '5yyI90SU3Xb73TVlv4wrEhQxYcCwMWCywQiGdYbJ',
     sort_hide_null: false,
@@ -67,7 +67,6 @@ const fetchQueryProgressAPI = async ({contributor_name, min_date, max_date, two_
     two_year_transaction_period,
     min_date,
     max_date,
-    contributor_occupation: 'CEO',
     contributor_employer,
     sort: 'contribution_receipt_date',
     per_page: 100,
@@ -84,6 +83,7 @@ const fetchQueryProgressAPI = async ({contributor_name, min_date, max_date, two_
   const handleRes = await response.json();
   for (const item of handleRes.results.values()) {
     item.realName = contributor_name;
+    item.companyName = originCompanyName;
   }
   return handleRes;
 }
@@ -133,13 +133,17 @@ const ACTION_HANDLERS = {
   [FETCH_QUERY_PROGRESS_SUCCESS]: (state, action) => {
     const oldList = state.list;
     const newList = oldList.concat(action.response.results.filter((item) => {
-      return item.contributor_occupation.indexOf('RETIRED') === -1 && (item.contribution_receipt_amount >= 200 || item.contribution_receipt_amount <= -200)
+      const ceoNameArr = ['CEO', 'C.E.O.', 'CHIEF EXECUTIVE'];
+
+      return item.contributor_occupation && item.contributor_occupation.indexOf('RETIRED') === -1 &&
+        (item.contribution_receipt_amount >= 200 || item.contribution_receipt_amount <= -200) &&
+        (item.contributor_occupation.toUpperCase().includes(ceoNameArr[0]) || item.contributor_occupation.toUpperCase().includes(ceoNameArr[1]) || item.contributor_occupation.toUpperCase().includes(ceoNameArr[2]))
     }).map(item => {
       return {
         name: item.realName,
         year: dayjs(item.contribution_receipt_date).year(),
         party: item.committee.party || 'XXX',
-        company: item.contributor_employer,
+        company: item.companyName,
         occupation: item.contributor_occupation,
         money: item.contribution_receipt_amount,
         date: item.contribution_receipt_date,

@@ -48,6 +48,9 @@ export default class CEOSearch extends React.PureComponent{
           if (compNameArr[compNameArr.length - 1].length <= 3 && compNameArr[compNameArr.length - 2] !== '&' && compNameArr.length > 1) {
             compNameArr.pop();
           }
+          if (compNameArr.length >= 3) {
+            compNameArr = compNameArr.slice(0, 2);
+          }
           compName = compNameArr.join(' ');
           if (compName.indexOf(' CORP') !== -1) {
             compName = compName.substring(0, compName.indexOf(' CORP'))
@@ -64,7 +67,8 @@ export default class CEOSearch extends React.PureComponent{
           name = nameArr.join(',');
           this.inputData.push({
             contributor_name: name.trim(),
-            contributor_employer: compName
+            contributor_employer: compName,
+            originCompanyName: item['Company Name']
           })
         }
       }
