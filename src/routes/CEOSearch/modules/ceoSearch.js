@@ -133,7 +133,7 @@ const ACTION_HANDLERS = {
   [FETCH_QUERY_PROGRESS_SUCCESS]: (state, action) => {
     const oldList = state.list;
     const newList = oldList.concat(action.response.results.filter((item) => {
-      const ceoNameArr = ['CEO', 'C.E.O.', 'CHIEF EXECUTIVE'];
+      const ceoNameArr = ['CEO', 'C.E.O.', 'CHIEF EXECUTIVE', 'CHIEFEXECUTIVE'];
 
       return item.contributor_occupation && item.contributor_occupation.indexOf('RETIRED') === -1 &&
         (item.contribution_receipt_amount >= 200 || item.contribution_receipt_amount <= -200) &&
