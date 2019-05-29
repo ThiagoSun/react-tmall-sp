@@ -58,7 +58,9 @@ export const fetchQueryProgress = (requestBody) => {
   }
 }
 
-const fetchQueryProgressAPI = async ({contributor_name, min_date, max_date, two_year_transaction_period, contributor_employer, originCompanyName}) => {
+const fetchQueryProgressAPI = async (
+    {contributor_name, min_date, max_date, two_year_transaction_period, contributor_employer, originCompanyName, originName}
+  ) => {
   const body = {
     api_key: '5yyI90SU3Xb73TVlv4wrEhQxYcCwMWCywQiGdYbJ',
     sort_hide_null: false,
@@ -82,7 +84,7 @@ const fetchQueryProgressAPI = async ({contributor_name, min_date, max_date, two_
   const response = await fetch(url);
   const handleRes = await response.json();
   for (const item of handleRes.results.values()) {
-    item.realName = contributor_name;
+    item.realName = originName;
     item.companyName = originCompanyName;
   }
   return handleRes;
