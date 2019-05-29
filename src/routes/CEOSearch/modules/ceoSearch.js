@@ -76,6 +76,9 @@ const fetchQueryProgressAPI = async ({contributor_name, min_date, max_date, two_
   for (const [key, value] of Object.entries(body)) {
     url += `${key}=${value}&`
   }
+  if (contributor_employer.split(' ').length >= 2) {
+    url += `contributor_employer=${contributor_employer.replace(new RegExp(' ', 'g'), '')}`;
+  }
   if (url[url.length - 1] === '&') {
     url = url.substring(0, url.length - 1);
   }
