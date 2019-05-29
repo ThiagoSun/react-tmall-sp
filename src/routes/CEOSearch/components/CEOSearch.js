@@ -61,8 +61,12 @@ export default class CEOSearch extends React.PureComponent{
 
           // 姓名处理
           nameArr = name.split(',');
-          if (nameArr[nameArr.length - 1].indexOf('II') === -1 && nameArr.length > 1) {
-            nameArr.pop();
+          while (nameArr.length > 1) {
+            if (nameArr[nameArr.length - 1].indexOf('II') === -1) {
+              nameArr.pop();
+            } else {
+              break;
+            }
           }
           name = nameArr.join(',');
           this.inputData.push({
