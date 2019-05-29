@@ -66,7 +66,7 @@ export default class CEOSearch extends React.PureComponent{
           }
           name = nameArr.join(',');
           this.inputData.push({
-            contributor_name: name.trim(),
+            contributor_name: item['CEO Name'],
             contributor_employer: compName,
             originCompanyName: item['Company Name']
           })
