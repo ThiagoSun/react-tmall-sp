@@ -140,7 +140,9 @@ const ACTION_HANDLERS = {
     const newList = oldList.concat(action.response.results.filter((item) => {
       const ceoNameArr = ['CEO', 'C.E.O.', 'CHIEF EX', 'CHIEFEX'];
 
-      return item.contributor_occupation && item.contributor_occupation.indexOf('RETIRED') === -1 &&
+      return item.contributor_occupation &&
+        item.contributor_occupation.toUpperCase().indexOf('RETIRED') === -1 &&
+        item.contributor_occupation.toUpperCase().indexOf('FORMER') === -1 &&
         (item.contribution_receipt_amount >= 200 || item.contribution_receipt_amount <= -200) &&
         (item.contributor_occupation.toUpperCase().includes(ceoNameArr[0])
           || item.contributor_occupation.toUpperCase().includes(ceoNameArr[1])
