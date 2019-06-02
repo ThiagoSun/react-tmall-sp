@@ -29,18 +29,30 @@ export const startProgress = (requestBody) => {
 
 export const fetchQueryProgress = (requestBody) => {
   return (dispatch, getState) => {
-    window.itv = 300;
     window.index = 0;
     handleAPI(async () => {
       const loopFunc = async () => {
         const response = await fetchQueryProgressAPI(requestBody[window.index]);
-        if (response.pagination.count >= response.pagination.per_page) {
-          console.error('需要请求第二页数据！')
-        }
         await dispatch({
           type: FETCH_QUERY_PROGRESS_SUCCESS,
           response
         });
+        let last_index = response.results.length ? response.results[response.results.length - 1].sub_id : null;
+        let last_contribution_receipt_date = response.results.length ? response.results[response.results.length - 1].contribution_receipt_date : null;
+        if (response.pagination.count > response.pagination.per_page) {
+          for (let i = 1; i < Math.ceil(response.pagination.count / response.pagination.per_page); i++) {
+            const response2 = await fetchQueryProgressAPI(Object.assign({}, requestBody[window.index], {
+              last_index,
+              last_contribution_receipt_date
+            }));
+            last_index = response2.results[response2.results.length - 1].sub_id;
+            last_contribution_receipt_date = response2.results[response2.results.length - 1].contribution_receipt_date;
+            await dispatch({
+              type: FETCH_QUERY_PROGRESS_SUCCESS,
+              response: response2
+            });
+          }
+        }
         window.index ++;
         if (window.index === requestBody.length) {
           clearTimeout(window.timer);
@@ -53,13 +65,13 @@ export const fetchQueryProgress = (requestBody) => {
           await loopFunc();
         }
       }
-      window.timer = setTimeout(loopFunc, window.itv);
+      await loopFunc();
     }, dispatch);
   }
 }
 
 const fetchQueryProgressAPI = async (
-    {contributor_name, min_date, max_date, two_year_transaction_period, contributor_employer, originCompanyName, originName}
+    {contributor_name, min_date, max_date, two_year_transaction_period, contributor_employer, originCompanyName, originName, last_index, last_contribution_receipt_date}
   ) => {
   const body = {
     api_key: '5yyI90SU3Xb73TVlv4wrEhQxYcCwMWCywQiGdYbJ',
@@ -72,11 +84,15 @@ const fetchQueryProgressAPI = async (
     contributor_employer,
     sort: 'contribution_receipt_date',
     per_page: 100,
-    is_individual: true
+    is_individual: true,
+    last_index,
+    last_contribution_receipt_date
   };
   let url = 'https://api.open.fec.gov/v1/schedules/schedule_a/?';
   for (const [key, value] of Object.entries(body)) {
-    url += `${key}=${value}&`
+    if (value !== undefined) {
+      url += `${key}=${value}&`
+    }
   }
   if (contributor_employer.split(' ').length >= 2) {
     url += `contributor_employer=${contributor_employer.replace(new RegExp(' ', 'g'), '')}`;
