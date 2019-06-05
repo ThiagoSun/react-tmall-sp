@@ -159,7 +159,7 @@ const ACTION_HANDLERS = {
       return item.contributor_occupation &&
         item.contributor_occupation.toUpperCase().indexOf('RETIRED') === -1 &&
         item.contributor_occupation.toUpperCase().indexOf('FORMER') === -1 &&
-        (item.contribution_receipt_amount >= 200 || item.contribution_receipt_amount <= -200) &&
+        item.contribution_receipt_amount >= 200 &&
         (item.contributor_occupation.toUpperCase().includes(ceoNameArr[0])
           || item.contributor_occupation.toUpperCase().includes(ceoNameArr[1])
           || item.contributor_occupation.toUpperCase().includes(ceoNameArr[2])
