@@ -155,15 +155,21 @@ const ACTION_HANDLERS = {
     const oldList = state.list;
     const newList = oldList.concat(action.response.results.filter((item) => {
       const ceoNameArr = ['CEO', 'C.E.O.', 'CHIEF EX', 'CHIEFEX'];
+      const contributor_occupation = item.contributor_occupation || '';
+      const contributor_employer = item.contributor_employer || '';
+      const contribution_receipt_amount = item.contribution_receipt_amount;
 
-      return item.contributor_occupation &&
-        item.contributor_occupation.toUpperCase().indexOf('RETIRED') === -1 &&
-        item.contributor_occupation.toUpperCase().indexOf('FORMER') === -1 &&
-        item.contribution_receipt_amount >= 200 &&
-        (item.contributor_occupation.toUpperCase().includes(ceoNameArr[0])
-          || item.contributor_occupation.toUpperCase().includes(ceoNameArr[1])
-          || item.contributor_occupation.toUpperCase().includes(ceoNameArr[2])
-          || item.contributor_occupation.toUpperCase().includes(ceoNameArr[3]))
+      return contributor_occupation.toUpperCase().indexOf('RETIRED') === -1 &&
+        contributor_occupation.toUpperCase().indexOf('FORMER') === -1 &&
+        contribution_receipt_amount >= 200 &&
+        (contributor_occupation.toUpperCase().includes(ceoNameArr[0])
+          || contributor_occupation.toUpperCase().includes(ceoNameArr[1])
+          || contributor_occupation.toUpperCase().includes(ceoNameArr[2])
+          || contributor_occupation.toUpperCase().includes(ceoNameArr[3])
+          || contributor_employer.toUpperCase().includes(ceoNameArr[0])
+          || contributor_employer.toUpperCase().includes(ceoNameArr[1])
+          || contributor_employer.toUpperCase().includes(ceoNameArr[2])
+          || contributor_employer.toUpperCase().includes(ceoNameArr[3]))
     }).map(item => {
       return {
         name: item.realName,
