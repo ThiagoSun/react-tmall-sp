@@ -9,8 +9,6 @@ export const preApi = apiConfig[env];
 
 let cacheError;
 
-const fetchUrl = []
-
 const filterErrorCodeArray = [-700];
 
 /**
@@ -21,27 +19,12 @@ const filterErrorCodeArray = [-700];
 export const fetchAPI = (...args) => composeMiddleWare(fetchAction, preApi, ...args);
 
 function fetchAction({ filter, url, options }) {
-  let tempUrl = '';
-  if (options.method !== 'GET') {
-    tempUrl = options.method + url.split('?')[0];
-    if (fetchUrl.indexOf(tempUrl) !== -1) {
-      return;
-    }
-    fetchUrl.push(tempUrl);
-  }
   cacheError = '';
   if (options.method === 'GET' && options.body) {
     url += `?${options.body}`;
     delete options.body;
   }
   return fetch(filter + url, options)
-    .then((response) => {
-      if (options.method !== 'GET') {
-        const i = fetchUrl.indexOf(tempUrl);
-        if (i !== -1) fetchUrl.splice(i, 1)
-      }
-      return response;
-    })
     .then(checkStatus)
     .then(checkFileType)
     .then(checkCode)
