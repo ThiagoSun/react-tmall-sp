@@ -154,7 +154,7 @@ const ACTION_HANDLERS = {
   [FETCH_QUERY_PROGRESS_SUCCESS]: (state, action) => {
     const oldList = state.list;
     const newList = oldList.concat(action.response.results.filter((item) => {
-      const ceoNameArr = ['CEO', 'C.E.O.', 'CHIEF EX', 'CHIEFEX', 'C E O'];
+      const ceoNameArr = ['CEO', 'C.E.O.', 'CHIEF EX', 'CHIEFEX', 'C E O', 'CHF EX'];
       const contributor_occupation = item.contributor_occupation || '';
       const contributor_employer = item.contributor_employer || '';
       const contribution_receipt_amount = item.contribution_receipt_amount;
@@ -167,11 +167,13 @@ const ACTION_HANDLERS = {
           || contributor_occupation.toUpperCase().includes(ceoNameArr[2])
           || contributor_occupation.toUpperCase().includes(ceoNameArr[3])
           || contributor_occupation.toUpperCase().includes(ceoNameArr[4])
+          || contributor_occupation.toUpperCase().includes(ceoNameArr[5])
           || contributor_employer.toUpperCase().includes(ceoNameArr[0])
           || contributor_employer.toUpperCase().includes(ceoNameArr[1])
           || contributor_employer.toUpperCase().includes(ceoNameArr[2])
           || contributor_employer.toUpperCase().includes(ceoNameArr[3])
-          || contributor_employer.toUpperCase().includes(ceoNameArr[4]))
+          || contributor_employer.toUpperCase().includes(ceoNameArr[4])
+          || contributor_employer.toUpperCase().includes(ceoNameArr[5]))
     }).map(item => {
       return {
         name: item.realName,
