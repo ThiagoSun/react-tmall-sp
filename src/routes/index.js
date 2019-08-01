@@ -2,6 +2,7 @@
 import Home from './Home';
 import Counter from './Counter';
 import CEOSearch from './CEOSearch';
+import RefsDemo from './refs-demo';
 
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
@@ -18,10 +19,15 @@ export const createRoutes = (store) => ([
     component: Counter
   },
   {
-    path: '/CEOSearch',
+    path: '/ceo-search',
     exact: true,
     component: CEOSearch
   },
+  {
+    path: '/refs-demo',
+    exact: true,
+    component: RefsDemo
+  }
 ]);
 
 /*  Note: childRoutes can be chunked or otherwise loaded programmatically

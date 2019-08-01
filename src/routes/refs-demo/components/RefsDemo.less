@@ -1,0 +1,236 @@
+:local{
+  .commonForm {
+    font-family: PingFangSC-Regular;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+
+    .content {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+
+      .inputContainer {
+        :global {
+          .am-list-body::before {
+            height: 0;
+          }
+          .am-list-body::after {
+            height: 0;
+          }
+          .am-list-item {
+            padding-left: 0;
+            height:110px;
+          }
+          .am-list-line {
+            padding-right: 0;
+          }
+          .am-list-line::after {
+            content: '';
+            position: absolute;
+            background-color: #ddd;
+            display: block;
+            z-index: 1;
+            top: auto;
+            right: auto;
+            bottom: 1px !important;
+            left: 0;
+            width: 100%;
+            height: 1PX;
+            -webkit-transform-origin: 50% 100%;
+            -ms-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+            -webkit-transform: scaleY(0.5);
+            -ms-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+          }
+          .am-input-label, .am-list-content {
+            flex: 0 0 200px;
+            width: 200px;
+            font-size: 32px;
+            line-height: 44px;
+            color: rgba(0, 23, 69, 0.85);
+            letter-spacing: 0;
+            margin-right: 5px;
+          }
+          .am-input-extra {
+            font-size: 32px;
+            line-height: 44px;
+            color: rgba(0, 23, 69, 0.85);
+            letter-spacing: 0;
+          }
+          .fake-input-placeholder {
+            font-family: PingFangSC-Regular;
+            font-size: 16px;
+            color: rgba(0, 23, 69, 0.45);
+            letter-spacing: 0;
+            line-height: 30px;
+          }
+          .fake-input {
+            font-family: PingFangSC-Regular;
+            flex: 1 1 auto;
+            border: none;
+            font-size: 16px;
+            color: rgba(0, 23, 69, 0.85);
+            letter-spacing: 0;
+            line-height: 30px;
+          }
+          .fake-input.focus:after {
+            top: 0;
+            border-right: 1px solid rgba(0, 23, 69, 0.85);;
+          }
+          .am-list-extra {
+            flex: 1 1 auto;
+            text-align: left;
+            font-family: PingFangSC-Regular;
+            font-size: 16px;
+            color: rgba(0, 23, 69, 0.45);
+            letter-spacing: 0;
+            line-height: 22px;
+          }
+        }
+        .datePickerClass {
+          :global {
+            .am-list-extra {
+              font-family: PingFangSC-Regular;
+              flex: 1 1 auto;
+              border: none;
+              font-size: 16px;
+              color: rgba(0, 23, 69, 0.85);
+              letter-spacing: 0;
+              line-height: 22px;
+            }
+          }
+        }
+        .selectPickerClass {
+          :global {
+            .am-list-extra {
+              font-family: PingFangSC-Regular;
+              flex: 1 1 auto;
+              border: none;
+              font-size: 16px;
+              color: rgba(0, 23, 69, 0.85);
+              letter-spacing: 0;
+              line-height: 22px;
+            }
+          }
+        }
+        input {
+          font-family: PingFangSC-Regular;
+          flex: 1 1 auto;
+          border: none;
+          font-size: 32px;
+          color: rgba(0, 23, 69, 0.85);
+          letter-spacing: 0;
+          line-height: 44px;
+        }
+        input::placeholder {
+          font-family: PingFangSC-Regular;
+          font-size: 32px;
+          color: rgba(0, 23, 69, 0.45);
+          letter-spacing: 0;
+          line-height: 44px;
+        }
+        .inputValue {
+          font-family: PingFangSC-Regular;
+          flex: 1 1 auto;
+          border: none;
+          font-size: 32px;
+          color: rgba(0, 23, 69, 0.85);
+          letter-spacing: 0;
+          line-height: 44px;
+        }
+        .cameraWrapper {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          position: relative;
+
+          .label {
+            font-size: 16px;
+            line-height: 22px;
+            color: rgba(0, 23, 69, 0.85);
+            letter-spacing: 0;
+            margin-right: 5px;
+            display: flex;
+            align-items: center;
+            height: 54px;
+          }
+          :global{
+            .am-image-picker-list{
+              padding: 0;
+              margin-bottom: 16px;
+            }
+            .am-image-picker-upload-btn{
+              background: rgba(0,0,0,0.05);
+              border: 1px solid rgba(0,0,0,0.10);
+              border-radius: 4px;
+            }
+            .am-flexbox-item{
+              flex: 0 0 100px;
+            }
+            .am-image-picker-upload-btn::after{
+              width: 0;
+            }
+            .am-image-picker-upload-btn::before {
+              width: 24px;
+              height: 24px;
+              content: " ";
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              background-size: 100% 100%;
+            }
+          }
+        }
+        .cameraWrapper::after {
+          content: '';
+          position: absolute;
+          background-color: #ddd;
+          display: block;
+          z-index: 1;
+          top: auto;
+          right: auto;
+          bottom: 1px !important;
+          left: 0;
+          width: 100%;
+          height: 1PX;
+          -webkit-transform-origin: 50% 100%;
+          -ms-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+          -webkit-transform: scaleY(0.5);
+          -ms-transform: scaleY(0.5);
+          transform: scaleY(0.5);
+        }
+      }
+    }
+
+    .btnWrapper {
+      padding: 50px 20px 40px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .btn {
+        background-image: linear-gradient(45deg, #D51A18 0%, #FF5151 100%);
+        border-radius: 4px;
+        border: none;
+        width: 100%;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        line-height: 25px;
+        color: #FFFFFF;
+        position: relative;
+      }
+      .btnDisabled {
+        opacity: 0.35;
+      }
+    }
+  }
+
+}
