@@ -4,7 +4,7 @@ import {List, InputItem, Picker, Toast, DatePicker, ImagePicker, Button} from 'a
 import Styles from './RefsDemo.less';
 import CustomInput from './Input';
 
-export default class RefsDemo extends React.PureComponent{
+export default class RefsDemo extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
@@ -19,6 +19,9 @@ export default class RefsDemo extends React.PureComponent{
     changeStore: PropTypes.func,
     inputValue1: PropTypes.string,
     inputValue2: PropTypes.string,
+    match: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired
   };
 
   componentWillUnmount() {
