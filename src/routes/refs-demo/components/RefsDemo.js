@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {List, InputItem, Picker, Toast, DatePicker, ImagePicker, Button} from 'antd-mobile';
 import Styles from './RefsDemo.less';
+import CustomInput from './Input';
 
-export default class RefsDemo extends React.PureComponent{
+export default class RefsDemo extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
@@ -11,12 +12,16 @@ export default class RefsDemo extends React.PureComponent{
     };
     this.myRef1 = React.createRef();
     this.myRef2 = React.createRef();
+    this.myRef3 = React.createRef();
   }
 
   static propTypes = {
     changeStore: PropTypes.func,
     inputValue1: PropTypes.string,
     inputValue2: PropTypes.string,
+    match: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired
   };
 
   componentWillUnmount() {
@@ -30,17 +35,15 @@ export default class RefsDemo extends React.PureComponent{
   };
 
   inputOnChange = (key) => (value) => {
-    console.log(this.myRef1.current, this.myRef2.current);
+    console.log(this.myRef1.current, this.myRef2.current, this.myRef3.current);
     this.changeValue(key, value);
   };
 
-  btn1OnClick = () => {
+  btnOnClick = () => {
     // console.log(ReactDOM.findDOMNode(this.myRef1.current).offsetHeight);
     console.log(this.myRef1.current.offsetHeight);
-  };
-
-  btn2OnClick = () => {
     console.log(this.myRef2.current.offsetHeight);
+    console.log(this.myRef3.current.offsetHeight);
   };
 
   render() {
@@ -60,11 +63,11 @@ export default class RefsDemo extends React.PureComponent{
                 type={'text'}
                 value={this.props.inputValue2}
                 placeholder={'请输入'}
-                onChange={this.inputOnChange('inputValue1')}
+                onChange={(e) => { this.inputOnChange('inputValue2')(e.target.value) }}
                 ref={this.myRef2}
               />
-              <Button onClick={this.btn1OnClick}>Focus1</Button>
-              <Button onClick={this.btn2OnClick}>Focus2</Button>
+              <CustomInput forwardRef={this.myRef3} />
+              <Button onClick={this.btnOnClick}>Click</Button>
             </List>
           </div>
         </div>
