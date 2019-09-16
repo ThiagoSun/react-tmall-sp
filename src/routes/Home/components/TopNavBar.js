@@ -6,7 +6,7 @@ import Styles from './TopNavBar.less';
 
 const Fragment = React.Fragment;
 
-export default @shouldComponentUpdate
+@shouldComponentUpdate
 class TopNavBar extends React.Component {
   constructor(props) {
     super(props);
@@ -89,3 +89,4 @@ class TopNavBar extends React.Component {
     );
   }
 }
+export default TopNavBar;

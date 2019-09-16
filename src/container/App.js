@@ -29,7 +29,7 @@ class App extends React.Component {
                     this.props.routes.map((r, key) => {
                       return (
                         <Route
-                          render={(props) => (<r.component store={this.props.store} {...props} />)}
+                          render={r.render ? r.render : (props) => (<r.component store={this.props.store} {...props} />)}
                           exact={!!r.exact}
                           key={r.path + key}
                           path={r.path}
