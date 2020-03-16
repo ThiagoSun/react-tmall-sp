@@ -1,5 +1,6 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
 export default class StudioRefresh extends PureComponent{
   constructor(props) {
@@ -12,7 +13,8 @@ export default class StudioRefresh extends PureComponent{
 
   static propTypes = {
     reloadSuccess: PropTypes.func,
-    successTimes: PropTypes.number
+    successTimes: PropTypes.number,
+    history: PropTypes.object
   };
 
   iframeOnload = () => {
@@ -28,12 +30,17 @@ export default class StudioRefresh extends PureComponent{
     }, 1000);
   };
 
+  handleJump = () => {
+    this.props.history.push('/refs-demo')
+  };
+
   render() {
     return <React.Fragment>
       <div>加载次数: {this.props.successTimes}</div>,
       {
         this.state.show ? <iframe src={this.url} onLoad={this.iframeOnload}></iframe> : null
       }
+      <div onClick={this.handleJump}>jump</div>
     </React.Fragment>
   }
 };
