@@ -1,14 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Toast} from 'antd-mobile';
+import { withRouter } from "react-router";
 
 const Fragment = React.Fragment;
 
-export default class GlobalStore extends React.Component {
+class GlobalStore extends React.Component {
   static propTypes = {
     globalStore: PropTypes.object,
     children: PropTypes.node.isRequired,
-    getGlobalInitInfo: PropTypes.func
+    getGlobalInitInfo: PropTypes.func,
+    location: PropTypes.object
   };
 
   constructor(props) {
@@ -20,6 +22,10 @@ export default class GlobalStore extends React.Component {
 
   componentDidMount() {
     this.props.getGlobalInitInfo();
+  }
+
+  componentDidUpdate() {
+    console.log(this.props.location.pathname);
   }
 
   componentDidCatch(error, info) {
@@ -38,3 +44,5 @@ export default class GlobalStore extends React.Component {
     </Fragment>
   }
 }
+
+export default withRouter(GlobalStore);

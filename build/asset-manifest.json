@@ -1,15 +1,16 @@
 {
-  "CEOSearch.js": "/static/js/CEOSearch.255c10cb.chunk.js",
-  "RefsDemo.css": "/static/css/RefsDemo.45249d5a.chunk.css",
-  "RefsDemo.js": "/static/js/RefsDemo.6e28e518.chunk.js",
-  "counter.css": "/static/css/counter.0f03ee80.chunk.css",
-  "counter.js": "/static/js/counter.4c11e115.chunk.js",
-  "main.css": "/static/css/main.b7d5b595.chunk.css",
-  "main.js": "/static/js/main.0aac936d.chunk.js",
-  "runtime~main.js": "/static/js/runtime~main.2f014d73.js",
-  "vendors.js": "/static/js/vendors.cab4e0c2.chunk.js",
+  "CEOSearch.js": "/static/js/CEOSearch.db3763e2.chunk.js",
+  "RefsDemo.css": "/static/css/RefsDemo.b9ac7e2e.chunk.css",
+  "RefsDemo.js": "/static/js/RefsDemo.42e01da9.chunk.js",
+  "StudioRefresh.js": "/static/js/StudioRefresh.247a7fd8.chunk.js",
+  "counter.css": "/static/css/counter.1716d65a.chunk.css",
+  "counter.js": "/static/js/counter.44f06608.chunk.js",
+  "main.css": "/static/css/main.afe33d82.chunk.css",
+  "main.js": "/static/js/main.f7f8e259.chunk.js",
+  "runtime~main.js": "/static/js/runtime~main.9b0d8e9b.js",
+  "vendors.js": "/static/js/vendors.b3553338.chunk.js",
   "index.html": "/index.html",
-  "precache-manifest.b648b5ef474d2f5b24afb33f5c6421be.js": "/precache-manifest.b648b5ef474d2f5b24afb33f5c6421be.js",
+  "precache-manifest.3dc51de0fa2f52dc916942ba90beaa0f.js": "/precache-manifest.3dc51de0fa2f52dc916942ba90beaa0f.js",
   "service-worker.js": "/service-worker.js",
-  "static/media/logo.svg": "/static/media/logo.5d5d9eef.svg"
+  "static/media/logo.svg": "/static/media/logo.ee7cd8ed.svg"
 }

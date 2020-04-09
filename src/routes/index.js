@@ -3,6 +3,7 @@ import Home from './Home';
 import Counter from './Counter';
 import CEOSearch from './CEOSearch';
 import RefsDemo from './refs-demo';
+import StudioRefresh from './studio-refresh';
 
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
@@ -27,6 +28,11 @@ export const createRoutes = (store) => ([
     path: '/refs-demo',
     exact: true,
     component: RefsDemo
+  },
+  {
+    path: '/studio-refresh',
+    exact: true,
+    component: StudioRefresh
   }
 ]);
 

@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { ConnectedRouter } from 'connected-react-router'
 import { Provider } from 'react-redux'
 import PropTypes from 'prop-types'
-import PageLayout from 'layouts/PageLayout';
+import GlobalStore from 'layouts/GlobalStore';
 
 class App extends React.Component {
   static propTypes = {
@@ -13,16 +13,12 @@ class App extends React.Component {
     history: PropTypes.object.isRequired
   };
 
-  shouldComponentUpdate () {
-    return false
-  }
-
   render () {
     return (
       <Provider store={this.props.store}>
         <ConnectedRouter history={this.props.history}>
-          <PageLayout>
-            <BrowserRouter>
+          <BrowserRouter>
+            <GlobalStore>
               <Suspense fallback={<div>Loading...</div>}>
                 <Switch>
                   {
@@ -39,8 +35,8 @@ class App extends React.Component {
                   }
                 </Switch>
               </Suspense>
-            </BrowserRouter>
-          </PageLayout>
+            </GlobalStore>
+          </BrowserRouter>
         </ConnectedRouter>
         {/*<Router history={this.props.history} children={this.props.routes} />*/}
       </Provider>
