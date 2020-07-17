@@ -6,12 +6,12 @@ import dayjs from 'dayjs';
 // Constants
 // ------------------------------------
 
-export const FETCH_QUERY_PROGRESS_SUCCESS = 'FETCH_QUERY_PROGRESS_SUCCESS(CEOSearch)';
-export const START_PROGRESS = 'START_PROGRESS(CEOSearch)';
-export const END_PROGRESS = 'END_PROGRESS(CEOSearch)';
-export const GET_LIST = 'GET_LIST(CEOSearch)';
-export const FORMAT_LIST = 'FORMAT_LIST(CEOSearch)';
-export const FORMAT_LIST_COMPLETED = 'FORMAT_LIST_COMPLETED(CEOSearch)';
+export const FETCH_QUERY_PROGRESS_SUCCESS = 'FETCH_QUERY_PROGRESS_SUCCESS(ceo-search)';
+export const START_PROGRESS = 'START_PROGRESS(ceo-search)';
+export const END_PROGRESS = 'END_PROGRESS(ceo-search)';
+export const GET_LIST = 'GET_LIST(ceo-search)';
+export const FORMAT_LIST = 'FORMAT_LIST(ceo-search)';
+export const FORMAT_LIST_COMPLETED = 'FORMAT_LIST_COMPLETED(ceo-search)';
 
 // ------------------------------------
 // Actions
