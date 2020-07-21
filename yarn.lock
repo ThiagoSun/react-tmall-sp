@@ -9202,14 +9202,12 @@ rsvp@^3.3.3:
   resolved "https://registry.yarnpkg.com/rsvp/-/rsvp-3.6.2.tgz#2e96491599a96cde1b515d5674a8f7a91452926a"
   integrity sha512-OfWGQTb9vnwRjwtA2QwpG2ICclHC3pgXZO5xt8H2EfgDquO0qVdSb5T88L4qJVAEugbS56pAuV4XZM58UX8ulw==
 
-rt-rollup-utils@^1.0.1:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/rt-rollup-utils/-/rt-rollup-utils-1.0.4.tgz#d4161bb5c2cfe933bf0d9afaffecd0b4d3ba36df"
-  integrity sha512-ZzEMrZJb9cQZkn9nNR4tJTMj6zZJ30uWyYq1w1dZprI98A7Kf7S+41IqPuSEMX/HnAea0jZ7lGtxXN8WNTE9UA==
+rt-rollup-utils@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/rt-rollup-utils/-/rt-rollup-utils-1.0.5.tgz#2da13e33df4ffb8c64af1f5fea61521c0d4eae90"
+  integrity sha512-kRklxsTS7eqiW40fjqulJI7028/tTekkfqnB2646BjrpyXHWaE6rU4HWSebpUsWEshxOALk8zA7a5POPQuctbg==
   dependencies:
     lodash "^4.17.19"
-    react "^16.13.1"
-    react-dom "^16.13.1"
     the-answer "^1.0.0"
 
 run-async@^2.2.0:
@@ -9310,6 +9308,11 @@ schema-utils@^1.0.0:
     ajv "^6.1.0"
     ajv-errors "^1.0.0"
     ajv-keywords "^3.1.0"
+
+seamless-immutable@^7.1.4:
+  version "7.1.4"
+  resolved "https://npm.xiaoheiban.cn/seamless-immutable/-/seamless-immutable-7.1.4.tgz#6e9536def083ddc4dea0207d722e0e80d0f372f8"
+  integrity sha1-bpU23vCD3cTeoCB9ci4OgNDzcvg=
 
 select-hose@^2.0.0:
   version "2.0.0"
