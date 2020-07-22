@@ -269,6 +269,9 @@ module.exports = function(webpackEnv) {
       runtimeChunk: true,
       moduleIds: 'hashed',    // 保证长效缓存
       chunkIds: 'named',      // 保证长效缓存
+      // providedExports: true,
+      // usedExports: true,
+      // sideEffects: false
     },
     resolve: {
       // This allows you to set a fallback for where Webpack should look for modules.

@@ -6416,6 +6416,11 @@ locate-path@^3.0.0:
     p-locate "^3.0.0"
     path-exists "^3.0.0"
 
+lodash-es@^4.17.15:
+  version "4.17.15"
+  resolved "https://registry.npm.taobao.org/lodash-es/download/lodash-es-4.17.15.tgz#21bd96839354412f23d7a10340e5eac6ee455d78"
+  integrity sha1-Ib2Wg5NUQS8j16EDQOXqxu5FXXg=
+
 lodash._reinterpolate@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/lodash._reinterpolate/-/lodash._reinterpolate-3.0.0.tgz#0ccf2d89166af03b3663c796538b75ac6e114d9d"
@@ -9202,12 +9207,12 @@ rsvp@^3.3.3:
   resolved "https://registry.yarnpkg.com/rsvp/-/rsvp-3.6.2.tgz#2e96491599a96cde1b515d5674a8f7a91452926a"
   integrity sha512-OfWGQTb9vnwRjwtA2QwpG2ICclHC3pgXZO5xt8H2EfgDquO0qVdSb5T88L4qJVAEugbS56pAuV4XZM58UX8ulw==
 
-rt-rollup-utils@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/rt-rollup-utils/-/rt-rollup-utils-1.0.5.tgz#2da13e33df4ffb8c64af1f5fea61521c0d4eae90"
-  integrity sha512-kRklxsTS7eqiW40fjqulJI7028/tTekkfqnB2646BjrpyXHWaE6rU4HWSebpUsWEshxOALk8zA7a5POPQuctbg==
+rt-rollup-utils@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.npm.taobao.org/rt-rollup-utils/download/rt-rollup-utils-1.0.9.tgz#0c251225dd5effe7b4686c53a59e0a6ffd162e18"
+  integrity sha1-DCUSJd1e/+e0aGxTpZ4Kb/0WLhg=
   dependencies:
-    lodash "^4.17.19"
+    lodash-es "^4.17.15"
     the-answer "^1.0.0"
 
 run-async@^2.2.0:
