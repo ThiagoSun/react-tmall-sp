@@ -9,7 +9,7 @@ import createRoutes from './routes/index';
 import 'react-app-polyfill/ie9';
 
 const store = createStore(window.__INITIAL_STATE__);
-const routes = createRoutes(store);
+const routes = createRoutes();
 const MOUNT_NODE = document.getElementById('root');
 
 let render = () => {

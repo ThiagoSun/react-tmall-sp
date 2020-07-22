@@ -1,14 +1,15 @@
 // We only need to import the modules necessary for initial render
-import Home from './Home';
-import Counter from './Counter';
-import CEOSearch from './CEOSearch';
+import Home from './home';
+import Counter from './counter';
+import CEOSearch from './ceo-search';
 import RefsDemo from './refs-demo';
 import StudioRefresh from './studio-refresh';
+import RollupTest from './rollup-test';
 
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
 
-export const createRoutes = (store) => ([
+export const createRoutes = () => ([
   {
     path: '/',
     exact: true,
@@ -33,6 +34,11 @@ export const createRoutes = (store) => ([
     path: '/studio-refresh',
     exact: true,
     component: StudioRefresh
+  },
+  {
+    path: '/rollup-test',
+    exact: true,
+    component: RollupTest
   }
 ]);
 
@@ -43,7 +49,7 @@ export const createRoutes = (store) => ([
       require.ensure([], (require) => {
         cb(null, [
           // Remove imports!
-          require('./Counter').default(store)
+          require('./counter').default(store)
         ])
       })
     }
