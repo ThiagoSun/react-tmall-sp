@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Toast} from 'antd-mobile';
-import { withRouter } from "react-router";
+import { withRouter } from "react-router-dom";
 
 const Fragment = React.Fragment;
 
