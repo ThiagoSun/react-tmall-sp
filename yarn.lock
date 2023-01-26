@@ -6223,7 +6223,7 @@ __metadata:
 
 "fsevents@patch:fsevents@^1.2.3#~builtin<compat/fsevents>, fsevents@patch:fsevents@^1.2.7#~builtin<compat/fsevents>":
   version: 1.2.13
-  resolution: "fsevents@patch:fsevents@npm%3A1.2.13#~builtin<compat/fsevents>::version=1.2.13&hash=d11327"
+  resolution: "fsevents@patch:fsevents@npm%3A1.2.13#~builtin<compat/fsevents>::version=1.2.13&hash=18f3a7"
   dependencies:
     bindings: ^1.5.0
     nan: ^2.12.1
@@ -6233,7 +6233,7 @@ __metadata:
 
 "fsevents@patch:fsevents@~2.1.2#~builtin<compat/fsevents>":
   version: 2.1.3
-  resolution: "fsevents@patch:fsevents@npm%3A2.1.3#~builtin<compat/fsevents>::version=2.1.3&hash=31d12a"
+  resolution: "fsevents@patch:fsevents@npm%3A2.1.3#~builtin<compat/fsevents>::version=2.1.3&hash=18f3a7"
   dependencies:
     node-gyp: latest
   conditions: os=darwin
@@ -12403,14 +12403,14 @@ __metadata:
 
 "resolve@patch:resolve@1.1.7#~builtin<compat/resolve>":
   version: 1.1.7
-  resolution: "resolve@patch:resolve@npm%3A1.1.7#~builtin<compat/resolve>::version=1.1.7&hash=3bafbf"
+  resolution: "resolve@patch:resolve@npm%3A1.1.7#~builtin<compat/resolve>::version=1.1.7&hash=07638b"
   checksum: e9dbca78600ae56835c43a09f1276876c883e4b4bbd43e2683fa140671519d2bdebeb1c1576ca87c8c508ae2987b3ec481645ac5d3054b0f23254cfc1ce49942
   languageName: node
   linkType: hard
 
 "resolve@patch:resolve@1.10.0#~builtin<compat/resolve>":
   version: 1.10.0
-  resolution: "resolve@patch:resolve@npm%3A1.10.0#~builtin<compat/resolve>::version=1.10.0&hash=c3c19d"
+  resolution: "resolve@patch:resolve@npm%3A1.10.0#~builtin<compat/resolve>::version=1.10.0&hash=07638b"
   dependencies:
     path-parse: ^1.0.6
   checksum: 15a10fd1be02a58840c03aa8dcc704656e5337efc17ac411cdbf5a96933a3697142952b42ce5bff9d14c0675f73f2c0dd8de91765265d88e8e44e7b06c9f9910
@@ -12419,7 +12419,7 @@ __metadata:
 
 "resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.13.1#~builtin<compat/resolve>, resolve@patch:resolve@^1.3.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.6.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.8.1#~builtin<compat/resolve>, resolve@patch:resolve@^1.9.0#~builtin<compat/resolve>":
   version: 1.17.0
-  resolution: "resolve@patch:resolve@npm%3A1.17.0#~builtin<compat/resolve>::version=1.17.0&hash=c3c19d"
+  resolution: "resolve@patch:resolve@npm%3A1.17.0#~builtin<compat/resolve>::version=1.17.0&hash=07638b"
   dependencies:
     path-parse: ^1.0.6
   checksum: 6fd799f282ddf078c4bc20ce863e3af01fa8cb218f0658d9162c57161a2dbafe092b13015b9a4c58d0e1e801cf7aa7a4f13115fea9db98c3f9a0c43e429bad6f
@@ -14161,9 +14161,9 @@ __metadata:
   linkType: hard
 
 "ua-parser-js@npm:^0.7.18":
-  version: 0.7.21
-  resolution: "ua-parser-js@npm:0.7.21"
-  checksum: 5c1f523e784442ee03d859981fccd642c3825c50365148c3803e151ba19419cef0ec1c47af9ebde1cb7be211ed194d255f7e5ba659a9f1f77d3c674da7b454da
+  version: 0.7.33
+  resolution: "ua-parser-js@npm:0.7.33"
+  checksum: 1510e9ec26fcaf0d8c6ae8f1078a8230e8816f083e1b5f453ea19d06b8ef2b8a596601c92148fd41899e8b3e5f83fa69c42332bd5729b931a721040339831696
   languageName: node
   linkType: hard
 
